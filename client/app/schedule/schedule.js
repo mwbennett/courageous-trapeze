@@ -28,7 +28,7 @@ schedule.controller('ScheduleController', ['$scope', 'Messages', 'Contacts', fun
   
   $scope.addMessage = function (message) {
     $scope.loading = true;
-
+    debugger;
     Messages.addMessage(message)
       .success(function () {
         $scope.message.contactId = '';
