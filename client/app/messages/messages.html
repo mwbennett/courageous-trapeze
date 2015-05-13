@@ -22,7 +22,7 @@
       <div class="contactName"><h3>{{ message.contactId.name }}</h3></div>
       <div class="text"><p>{{ message.text }}</p></div>
       <div class="footer">
-        <p><i class="fa fa-clock-o"></i> <span class="date">{{ message.date | date : 'MMM d, yyyy' }}</span>  | <span class="status">{{ message.status }}</span></p>
+        <p><i class="fa fa-clock-o"></i> <span class="date">{{ message.date | date : 'MMM d, yyyy | h:mm a' }}</span>  | <span class="status">{{ message.status }}</span></p>
       </div>
     </div>
   </div>

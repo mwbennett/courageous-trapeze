@@ -26,7 +26,7 @@
         <label for="text">Text Message</label>
         <textarea id="text" type="text" ng-model="message.text" class="pure-input-1-2"></textarea>
         <label for="date">Scheduled Date</label>
-        <input id="date" type="date" ng-model="message.date" class="pure-input-1-2">
+        <input id="date" type="datetime-local" ng-model="message.date" class="pure-input-1-2">
         <button ng-click="addMessage(message)" class="pure-button pure-button-primary">Submit</button> 
         <img src="assets/spiffygif_46x46.gif" alt="Loading" ng-show="loading">
 
