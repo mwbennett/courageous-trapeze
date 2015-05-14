@@ -77,4 +77,16 @@ angular.module('courageousTrapeze.contacts', [])
     });
   };
 
+  $scope.removeContact = function(contact, index) {
+    //$scope.loading = true;
+    // Contacts.removeContact(contact)
+    // .then(function(){
+
+    // });
+    console.log(contact);
+   $scope.contacts.splice(index,1);
+
+
+  };
+
 }]);

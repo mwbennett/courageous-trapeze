@@ -17,5 +17,6 @@
     "trailing": true,
     "undef": false,
     "unused": true,
-    "white": true
+    "white": true,
+    "predef": ["angular", "window", "location"]
 }
