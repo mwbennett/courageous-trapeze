@@ -18,15 +18,15 @@
       <fieldset>
         <div class="pure-input-1-2">
           <label for="contactSelect">Contact</label>
-          <select name="contactSelect" id="contactSelect" ng-options="contact as contact.name for contact in contacts | orderBy: 'name'" ng-model="contact" ng-change="setContact(contact || '')">
+          <select name="contactSelect" id="contactSelect" ng-options="contact as contact.name for contact in contacts | orderBy: 'name'" ng-model="contact" ng-change="setContact(contact || '')" required>
             <option value=""></option>
           </select>
         </div>
 
         <label for="text">Text Message</label>
-        <textarea id="text" type="text" ng-model="message.text" class="pure-input-1-2"></textarea>
+        <textarea id="text" type="text" ng-model="message.text" class="pure-input-1-2" required></textarea>
         <label for="date">Scheduled Date</label>
-        <input id="date" type="datetime-local" ng-model="message.date" class="pure-input-1-2">
+        <input id="date" type="datetime-local" ng-model="message.date" class="pure-input-1-2" required>
         <button ng-click="addMessage(message)" class="pure-button pure-button-primary">Submit</button> 
         <img src="assets/spiffygif_46x46.gif" alt="Loading" ng-show="loading">
 
