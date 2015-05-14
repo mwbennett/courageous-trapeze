@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>antiSocialite</title>
     <link rel="shortcut icon" href="/assets/robot-screen-print.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/emojione/1.3.0/assets/css/emojione.min.css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
@@ -16,11 +17,18 @@
       <h2 class="heading">antiSocialite</h2>
     </div>
     <div ng-view class="tall"></div>    
+
+    <!-- emojione library to enable the inclusion of short-codes in message text, which converts to emojis. conversion 
+    occurs in the getAllMessages fuction in messages.js, and the 'bindCompiledHtml' directive allows the emoji to render 
+    in the browser -->
+    <script src="//cdn.jsdelivr.net/emojione/1.3.0/lib/js/emojione.min.js"></script>
+    
     <script src="lib/underscore/underscore-min.js"></script>
     <script src="lib/bluebird/js/browser/bluebird.min.js"></script>
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
     <script src="app/app.min.js"></script>
   </body>
 </html>

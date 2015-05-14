@@ -30,6 +30,10 @@ a {
   text-decoration: none;
 }
 
+.alert {
+  color: red;
+}
+
 .white-text {
   color: #fff;
 }
