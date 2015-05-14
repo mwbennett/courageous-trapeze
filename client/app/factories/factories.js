@@ -228,6 +228,19 @@ angular.module('courageousTrapeze.factories', [])
     // });
   };
 
+  //delete message from server
+  var removeMessage = function(message) {
+    return $http({
+      method: 'DELETE',
+      url: '/api/messages',
+      data: message
+    }).success(function (response){
+      console.log('Deleted the message:',response);
+    }).error(function (response) {
+      console.log('Unable to remove message from server', response);
+    });
+  };
+
   return {
     fetch: fetch,
     addMessage: addMessage
