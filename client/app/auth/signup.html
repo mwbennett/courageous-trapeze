@@ -8,7 +8,9 @@
       <input type="password" id="password" ng-model="user.password" class="pure-input-1">
       <button ng-click="signup()" class="pure-button pure-button-primary">Sign Up</button>
     </fieldset>
-    <p> Already have an account? </p>
-      <div><a href="/#/signin">Sign In</a></div>
-</form>
+  </form>
+  <div class='alert'> {{ alert }} </div>
+  <p> Already have an account?
+    <a href="/#/signin">Sign In</a>
+  </p>
 </div>

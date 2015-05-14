@@ -7,9 +7,11 @@
       <label for="password">Password:</label>
       <input type="password" id="password" ng-model="user.password" class="pure-input-1">
       <button ng-click="signin()" class="pure-button pure-button-primary">Sign In</button>
-      <button ng-click="signout()" class="pure-button">Sign Out</button>
     </fieldset>
   </form>
-    <p> Already have an account? </p>
-    <div><a href="/#/signup">Sign Up</a></div>
+  <div class='alert'> {{ alert }} </div>
+    <p> Already have an account? 
+      <a href="/#/signup">Sign Up</a>
+    </p>
+    
 </div>
