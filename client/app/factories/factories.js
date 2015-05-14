@@ -177,18 +177,16 @@ angular.module('courageousTrapeze.factories', [])
   var removeContact = function(contact){
     return $http({
       method: 'DELETE',
-      url: '/api/contacts',
+      url: '/api/contacts/',
       headers: {'Content-Type': 'application/json'},
       data: contact,
       responseType: 'json'
     }).success(function(result) {
       if(result) {
-        console.log('DATA TO REMOVE');
-        //remove specific contact in array 
-        //delete _contacts[_contacts.indexOf(data)];  //Does indexOf work for json object?
+        return result;
       }
-    }).error(function(result) {
-      console.error("couldn't remove contact", result);
+    }).error(function(error) {
+      return error;
     });
   };
 
@@ -233,16 +231,20 @@ angular.module('courageousTrapeze.factories', [])
     return $http({
       method: 'DELETE',
       url: '/api/messages',
+      headers: {'Content-Type': 'application/json'},
       data: message
     }).success(function (response){
       console.log('Deleted the message:',response);
-    }).error(function (response) {
+      return response.data;
+    }).error(function (error) {
       console.log('Unable to remove message from server', response);
+      return error;
     });
   };
 
   return {
     fetch: fetch,
-    addMessage: addMessage
+    addMessage: addMessage,
+    removeMessage: removeMessage
   };
 }]);
