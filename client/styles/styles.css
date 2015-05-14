@@ -129,6 +129,15 @@ button:focus {
   margin: 10px;
   border: 1px solid #E0E4CC;
   padding: 0 10px;
+  position: relative;
+}
+
+.cancel {
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }
 
 .menu {

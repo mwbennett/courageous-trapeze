@@ -174,12 +174,31 @@ angular.module('courageousTrapeze.factories', [])
     });
   };
 
+  var removeContact = function(contact){
+    return $http({
+      method: 'DELETE',
+      url: '/api/contacts',
+      headers: {'Content-Type': 'application/json'},
+      data: contact,
+      responseType: 'json'
+    }).success(function(result) {
+      if(result) {
+        console.log('DATA TO REMOVE');
+        //remove specific contact in array 
+        //delete _contacts[_contacts.indexOf(data)];  //Does indexOf work for json object?
+      }
+    }).error(function(result) {
+      console.error("couldn't remove contact", result);
+    });
+  };
+
   return {
     importFromGoogle: importFromGoogle,
     fetch: fetch,
     getAll: getAll,
     setContacts: setContacts,
-    addContact: addContact
+    addContact: addContact,
+    removeContact: removeContact
   };
 }])
 
