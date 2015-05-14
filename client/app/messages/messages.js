@@ -25,6 +25,13 @@ angular.module('courageousTrapeze.messages', [])
 
   $scope.getAllMessages();
 
+  $scope.removeMessage = function(msg, index){
+    //Remove message from view
+    $scope.messages.splice(index,1);
+    //Messages.removeMessage(index);
+  };
+
+
 }])
 
 // custom directive to render the html message on the view 
