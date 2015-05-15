@@ -34,7 +34,7 @@ module.exports = {
     // identify net new contacts, i.e., contacts that do not exist in database already
     var existingNumbers = [];
     var newContacts = [];
-    var query = Contact.find({userId:contactsReceived[0].userId});
+    var query = Contact.find({userId:request.user.userId});
     query.exec(function (error, docs) {
       for (var i = 0; i < docs.length; i++) {
         existingNumbers.push(docs[i].phone);
