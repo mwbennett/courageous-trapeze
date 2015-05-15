@@ -30,6 +30,25 @@ a {
   text-decoration: none;
 }
 
+input {
+  display: inline-block;
+  width: 100px;
+  margin: 4px;
+}
+
+button:focus {
+  outline: 0px;
+}
+
+.clickable-list-item {
+  border-color: #69D2E7;
+}
+
+.clickable-list-item:hover {
+  background-color: #F5F5F5;
+  cursor: pointer;
+}
+
 .alert {
   color: red;
 }
@@ -54,14 +73,14 @@ a {
   margin: 4px;
 }
 
-input {
-  display: inline-block;
-  width: 100px;
-  margin: 4px;
+#contactSelect {
+  height: 32px;
+  width: 100%;
 }
 
-button:focus {
-  outline: 0px;
+#dropdown {
+  position: fixed;
+  background-color: rgba(255, 255, 255, .9);
 }
 
 #signup, #signin {
@@ -136,12 +155,15 @@ button:focus {
   position: relative;
 }
 
-.cancel {
-  background-color: red;
-  color: white;
+.cancel-message {
   position: absolute;
-  top: 1em;
+  cursor: pointer;
+  top: 1.3em;
   right: 1em;
+}
+
+.cancel-message:hover {
+  color: red;
 }
 
 .menu {
