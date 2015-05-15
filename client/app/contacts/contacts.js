@@ -81,9 +81,7 @@ angular.module('courageousTrapeze.contacts', [])
     //$scope.loading = true;
     Contacts.removeContact(contact)
     .then(function(result){
-      if(result.OK){
-        $scope.contacts.splice(index,1);
-      }
+      $scope.contacts.splice(index,1);
     })
     .catch(function(error){
       console.log(error);
