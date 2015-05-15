@@ -29,6 +29,7 @@ module.exports = function(grunt) {
           'client/app/messages/**/*.js',
           'client/app/schedule/**/*.js',
           'client/app/auth/**/*.js',
+          'client/app/filters/*',
           'client/app/app.js'
         ],
         dest: 'client/build/app.concat.js'
