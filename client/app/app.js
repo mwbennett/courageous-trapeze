@@ -4,6 +4,7 @@ angular.module('courageousTrapeze', [
   'courageousTrapeze.schedule',
   'courageousTrapeze.messages',
   'courageousTrapeze.auth',
+  'courageousTrapeze.filters',
   'ngRoute'
 ])
 

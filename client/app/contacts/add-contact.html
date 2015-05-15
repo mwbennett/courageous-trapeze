@@ -29,7 +29,7 @@
       <h3>Contacts added:</h3>
       <div ng-repeat="contact in newContacts">
         Name: {{ contact.name }}<br>
-        Phone: {{ contact.phone }}
+        Phone: {{ contact.phone | tel }}
       </div>
     </div>
   </div>

@@ -29,7 +29,7 @@
       <tbody ng-show="contacts">
         <tr ng-repeat="contact in contacts | orderBy: 'name' | filter:query">
           <td>{{ contact.name }}</td>
-          <td>{{ contact.phone }} </td>
+          <td>{{ contact.phone | tel }} </td>
           <td><button type='button' ng-click='removeContact(contact, $index)'>Bye bye!</button></td>
         </tr>
       </tbody>
