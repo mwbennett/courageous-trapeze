@@ -18,9 +18,15 @@
       <fieldset>
         <div class="pure-input-1-2">
           <label for="contactSelect">Contact</label>
-          <select name="contactSelect" id="contactSelect" ng-options="contact as contact.name for contact in contacts | orderBy: 'name'" ng-model="contact" ng-change="setContact(contact || '')" required>
-            <option value=""></option>
-          </select>
+          <textarea name="contactSelect" id="contactSelect" ng-model="search" required></textarea>
+        </div>
+        <div ng-repeat="contact in contacts | orderBy: 'name' | filter:search" ng-show="search">
+          <tr>
+            <span ng-click='setContact(contact)'>
+              <td>{{ contact.name }}</td>
+              <td>{{ contact.phone }} </td>
+            </span>
+          </tr>  
         </div>
 
         <label for="text">Text Message</label>
