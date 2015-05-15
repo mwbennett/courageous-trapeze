@@ -22,7 +22,7 @@
     <div class="message pure-u-2-3" ng-repeat="message in messages | orderBy: 'date' | filter:query">
       <div class="contactName">
         <h3>{{ message.contactId.name }}</h3>
-       <button type='button' class='cancel' ng-click="removeMessage(message, $index)">Cancel</button>
+       <a type='button' class='cancel-message' ng-click="removeMessage(message, $index)">Delete</a>
       </div>
       <div class="text" bind-compiled-html='message.htmlText'></div>
       <div class="footer">

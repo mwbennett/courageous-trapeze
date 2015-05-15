@@ -10,6 +10,14 @@ schedule.controller('ScheduleController', ['$scope', 'Messages', 'Contacts', fun
   };
   $scope.contacts = [];
 
+  $scope.editingContact = function(){
+    $scope.clickedContact = false;
+  };
+
+  $scope.dropdownIsVisible = function(){
+    return !$scope.clickedContact && !!$scope.search;
+  }
+
   $scope.$on('$viewContentLoaded', function () {
     var promise = Contacts.fetch();
     promise.then(function (response) {
@@ -19,6 +27,7 @@ schedule.controller('ScheduleController', ['$scope', 'Messages', 'Contacts', fun
   });
 
   $scope.setContact = function (contact) {
+    $scope.clickedContact = true;
     $scope.search = contact.name;
     if (contact) {
       $scope.message.contactId = contact._id;
@@ -36,6 +45,7 @@ schedule.controller('ScheduleController', ['$scope', 'Messages', 'Contacts', fun
         $scope.message.date = '';
         $scope.loading = false;
         $scope.contact = '';
+        $scope.search = '';
         $scope.notification = 'Good work, your message is scheduled!';
       })
       .error(function () {

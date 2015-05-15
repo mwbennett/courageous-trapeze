@@ -18,15 +18,19 @@
       <fieldset>
         <div class="pure-input-1-2">
           <label for="contactSelect">Contact</label>
-          <textarea name="contactSelect" id="contactSelect" ng-model="search" required></textarea>
+          <textarea name="contactSelect" id="contactSelect" ng-model="search" ng-click="editingContact()" required></textarea>
         </div>
-        <div ng-repeat="contact in contacts | orderBy: 'name' | filter:search" ng-show="search">
-          <tr>
-            <span ng-click='setContact(contact)'>
-              <td>{{ contact.name }}</td>
-              <td>{{ contact.phone }} </td>
-            </span>
-          </tr>  
+
+        <div id="dropdown" ng-show="dropdownIsVisible()">
+          <table class="pure-table pure-table-horizontal">
+            <tbody>
+              <tr class="clickable-list-item" ng-click='setContact(contact)' ng-repeat="contact in contacts | orderBy: 'name' | filter:search">
+                  <td>{{ contact.name }}</td>
+                  <td>{{ contact.phone | tel}} </td>
+                </span>
+              </tr> 
+            </tbody>
+          </table>  
         </div>
 
         <label for="text">Text Message</label>
