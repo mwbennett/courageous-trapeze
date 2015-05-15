@@ -12,7 +12,7 @@ angular.module('courageousTrapeze.auth', [])
     })
     .error(function (err) {
       console.error(err);
-      $scope.alert = 'Incorrect username and password combination.'
+      $scope.alert = 'Incorrect username and password combination.';
     });
   };
 
@@ -24,7 +24,7 @@ angular.module('courageousTrapeze.auth', [])
     })
     .error(function (err) {
       console.error(err);
-      $scope.alert = 'User already exists. Please select a different username.'
+      $scope.alert = 'User already exists. Please select a different username.';
     });
   };
 
