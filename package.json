@@ -50,7 +50,6 @@
     "mpromise": "^0.5.5",
     "node-mongo-seeds": "^2.2.4",
     "underscore": "^1.8.3",
-    "jwt-simple": "^0.3.0",
-    "mongoose": "^4.0.2"
+    "morgan": "~1.5.3"
   }
 }

@@ -5,5 +5,5 @@ module.exports = function (router) {
 
   router.post('/', contactController.addContact);
   router.get('/', contactController.showContacts);
-
+  router.delete('/', contactController.deleteContact);
 };

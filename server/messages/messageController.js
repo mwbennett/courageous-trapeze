@@ -50,6 +50,18 @@ module.exports = {
     }
     response.status(200).send('Messages updated');
   },
+
+  deleteMessage: function (request, response, next) {
+    console.log(request.body);
+    var messageId = request.body._id;
+    Message.remove({'_id':messageId})
+    .then(function(results){
+      response.json(results);
+    })
+    .catch(function(error){
+      next(new Error('Error occurred while deleting contacts: ' + error));
+    });
+  },
   
   showMessages: function (request, response) {
   // return all Messages after server receives GET request
@@ -58,7 +70,7 @@ module.exports = {
       if (error) {
         response.status(500).send('Error: could not send docs');
       } else {
-        console.log('docs:', docs);
+        //console.log('docs:', docs);
         populate(docs);
       }
     });
@@ -67,10 +79,10 @@ module.exports = {
       var opts = [{path: 'contactId', model: 'Contact'}, {path: 'userId', model: 'User'}];
       Message.populate(docs, opts, function (error, newDocs) {
         if (error) {
-          console.log(error);
+          //console.log(error);
           response.status(500).send('Error: could not populate docs');
         } else {
-          console.log('newDocs:', newDocs);
+          //console.log('newDocs:', newDocs);
           response.status(200).send(newDocs);
         }
       });

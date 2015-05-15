@@ -29,17 +29,17 @@ module.exports = {
         userId: mongoose.Types.ObjectId(request.user.userId)
       };
     });
-    console.log('contactsReceived:', contactsReceived);
+    //console.log('contactsReceived:', contactsReceived);
 
     // identify net new contacts, i.e., contacts that do not exist in database already
     var existingNumbers = [];
     var newContacts = [];
-    var query = Contact.find();
+    var query = Contact.find({userId:contactsReceived[0].userId});
     query.exec(function (error, docs) {
       for (var i = 0; i < docs.length; i++) {
         existingNumbers.push(docs[i].phone);
       }
-      console.log(existingNumbers);
+      //console.log(existingNumbers);
 
       for (var j = 0; j < contactsReceived.length; j++) {
         if (existingNumbers.indexOf(contactsReceived[j].phone) === -1) {
@@ -56,6 +56,17 @@ module.exports = {
           response.status(200).send(docs);
         }
       });
+    });
+  },
+
+  deleteContact: function (request, response, next) {
+    var contactId = request.body._id;
+    Contact.remove({'_id':contactId})
+    .then(function(results){
+      response.json(results);
+    })
+    .catch(function(error){
+      next(new Error('Error occurred while deleting contacts: ' + error));
     });
   },
   
