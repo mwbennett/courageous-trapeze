@@ -207,9 +207,11 @@ angular.module('courageousTrapeze.factories', [])
       url: '/api/messages'
     })
     .then(function (response) {
+      console.log('DATA : ', response.data);
       return response.data;
     });
   };
+  // hey
 
   var addMessage = function (message) {
     return $http({

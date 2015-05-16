@@ -162,6 +162,25 @@ button:focus {
   right: 1em;
 }
 
+tr td.remove-contact {
+  cursor: pointer;
+  color: white;
+  text-align: center;
+}
+
+circle.remove-text {
+  color: white;
+  text-align: center;
+  padding: 2px 9px;
+  background: #69D2E7;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+circle.remove-text:hover {
+  background: red;
+}
+
 .cancel-message:hover {
   color: red;
 }
