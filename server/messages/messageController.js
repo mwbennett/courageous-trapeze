@@ -62,6 +62,17 @@ module.exports = {
       next(new Error('Error occurred while deleting contacts: ' + error));
     });
   },
+
+  getPendingMessages: function (request, response, next){
+    var currentTime = Date.now();
+    Message.find({'date': {$lte:currentTime},'userId': request.user.userId})
+    .then(function(results){
+      response.json(results);
+    })
+    .catch(function(error){
+      next(new Error('Error occurred while deleting contacts: ' + error));
+    });
+  },
   
   showMessages: function (request, response) {
   // return all Messages after server receives GET request
